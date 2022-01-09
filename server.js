@@ -77,25 +77,6 @@ looks at requests where the Content-Type header matches the type option
 */
 app.use(bodyParser.json());
 
-
-// Express Session middleware
-
-/*
-// secret: 
- A session secret is simply used to compute the hash.
-Without the string, access to the session would essentially be "denied".
-It is very important that this value be unique.
-
-// resave: it updated in the session store (will be active), 
-even the session wasn't changed during a request.
-
-//saveUninitialized - if it is true it means: 
-session object will always be stored in the session store.
-Then, You'd be able to recognize such a visitor because they
-send the session cookie containing the unique id.
-*/
-
-
 // Passport Config
 require('./config/passport')(passport);
 
