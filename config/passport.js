@@ -29,24 +29,6 @@ module.exports = function (passport) {
     }));
 
 
-    /*
-    In serialize user you decide what to store in the session. 
-    Here I'm storing the user id only.
-    */
-    passport.serializeUser(function (user, done) {
-        done(null, user.id);
-    });
-
-
-    /*
-    Here you retrieve all the info of the user from the session storage using
-    the user id stored in the session earlier using serialize user.
-    */
-    passport.deserializeUser(function (id, done) {
-        User.findById(id, function (err, user) {
-            done(err, user);
-        });
-    });
 
 }
 
